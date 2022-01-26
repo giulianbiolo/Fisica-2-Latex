@@ -24,7 +24,7 @@ Condensatori:
 
 Possono essere sia lineari che non. In ogni caso si tratta di componenti elettriche che mettono in relazione tensione e carica.
 
-![Image](condensatore_lineare_e_non.jpg)  
+![Image](img/lez3/condensatore_lineare_e_non.jpg)  
 
 Noi studieremo i condensatori lineari, ossia quelli che soddisfano la relazione: $Q(t) = C(t)V(t) : C(t) = const \space \forall t.$  
 
@@ -44,11 +44,11 @@ Quest'ultima equazione è spesso scritta nella forma:
 $$V(t) = V(0) + \int_{0}^{t}{I(\tau)d\tau}$$  
 Questa equazione in particolare ha delle implicazioni importanti, ci dice che la tensione ad un dato istante dipende dal passato del condensatore. Si può quindi modellare un condensatore carico a $V(0) = V_{0}$ come un circuito composto dallo stesso condensatore scarico in serie ad un generatore di tensione con tensione nominale $V_0$.  
 
-![Image](condensatore_effetto_memoria.jpg)  
+![Image](img/lez3/condensatore_effetto_memoria.jpg)  
 
 Un esempio di utilizzo di queste formule:  
 
-![Image](esempio_esercizio_condensatore.jpg)  
+![Image](img/lez3/esempio_esercizio_condensatore.jpg)  
 
 Inoltre ricordiamo che la tensione di un condensatore è una quantità continua, a prescindere dal comportamento della corrente.  
 Fisicamente parlando un condensatore è formato da due piastre metalliche parallele, la capacità è funzione della geometria: $C = \frac{\epsilon_{0}\cdot S}{d}$  

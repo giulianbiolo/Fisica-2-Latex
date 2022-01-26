@@ -59,7 +59,7 @@ Diagramma Riassuntivo:
 
 Riporto qui sotto un diagramma riassuntivo di tutte le componenti studiate nelle ultime lezioni, e tutte le relazioni più importanti che comportano.  
 
-![Image](grafico_riassuntivo_componenti_passive.jpg)  
+![Image](img/lez4/grafico_riassuntivo_componenti_passive.jpg)  
 
 ---
 Reti di Resistori:
@@ -67,33 +67,33 @@ Reti di Resistori:
 
 Nel caso di resistenze in serie, si può dimostrare che $R_{eq} = \Sigma_{i=1}^{n}R_i$.  
 
-![Image](dimostrazione_resistenze_in_serie.jpg)  
+![Image](img/lez4/dimostrazione_resistenze_in_serie.jpg)  
 
 Nel caso di generatori in serie, se sono di tensione si possono banalmente sommare le tensioni, mentre nel caso di generatori di corrente bisogna far attenzione che KCL deve valere!  
 
-![Image](generatori_in_serie.jpg)  
+![Image](img/lez4/generatori_in_serie.jpg)  
 
 Nel caso di resistori in parallelo invece, si può dimostrare che $\frac{1}{R_{eq}} = \frac{1}{\Sigma_{i=1}^{n}R_i}$.  
 
-![Image](dimostrazione_resistenze_in_parallelo.jpg)  
+![Image](img/lez4/dimostrazione_resistenze_in_parallelo.jpg)  
 
 Nel caso di condensatori in serie, si può dimostrare che $\frac{1}{C_{eq}} = \Sigma_{i=1}^{n}\frac{1}{C_i}$.  
 
-![Image ](dimostrazione_condensatori_in_serie.jpg)  
+![Image ](img/lez4/dimostrazione_condensatori_in_serie.jpg)  
 
 Nel caso di condensatori in parallelo invece, si può dimostrare che $C_{eq} = \Sigma_{i=1}^{n}C_i$.  
 
-![Image](dimostrazione_condensatori_in_parallelo.jpg)  
+![Image](img/lez4/dimostrazione_condensatori_in_parallelo.jpg)  
 
 Nel caso di induttori in serie, si può dimostrare che $L_{eq} = \Sigma_{i=1}^{n}L_i$.  
 
-![Image](dimostrazione_induttori_in_serie.jpg)  
+![Image](img/lez4/dimostrazione_induttori_in_serie.jpg)  
 
 Nel caso di induttori in parallelo, si può dimostrare che $L_{eq} = \frac{1}{\Sigma_{i=1}^{n}\frac{1}{L_i}}$.
 
-![Image](dimostrazione_induttori_in_parallelo.jpg)  
+![Image](img/lez4/dimostrazione_induttori_in_parallelo.jpg)  
 
 Quindi possiamo riassumere in un diagramma riassuntivo tutto ciò:
 
-![Image](grafico_riassuntivo_serie_parallelo.jpg)  
+![Image](img/lez4/grafico_riassuntivo_serie_parallelo.jpg)  
 

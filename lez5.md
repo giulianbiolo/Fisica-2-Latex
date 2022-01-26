@@ -28,7 +28,7 @@ Il principio della sovrapposizione ci dice che in un circuito lineare, contenent
 
 Esempio:
 
-![Image](principio_della_sovrapposizione.jpg)  
+![Image](img/lez5/principio_della_sovrapposizione.jpg)  
 
 Torna comodo in certe situazione per evitare di scomodare le leggi di kirchhoff dei nodi e delle maglie.  
 
@@ -40,7 +40,7 @@ All'interno di un circuito si può trovare una componente che fa da selettore al
 
 Esempio:
 
-![Image](soluzione_circuito_rc.jpg)  
+![Image](img/lez5/soluzione_circuito_rc.jpg)  
 
 ---
 Risposta Ad Ingresso Zero:
@@ -48,7 +48,7 @@ Risposta Ad Ingresso Zero:
 
 Proviamo ora a descrivere la carica del condensatore, da scarico, allo stesso modo in cui abbiamo calcolato la sua scarica nell'esempio precedente.  
 
-![Image](soluzione_circuito_rc_carica.jpg)  
+![Image](img/lez5/soluzione_circuito_rc_carica.jpg)  
 
 Se risolvo il circuito soggetto ad un ingresso nel momento in cui non c'è energia immagazzinata in alcuna componente(capacitiva/induttiva) allora tale risposta è detta risposta a stato zero.  
 
@@ -58,5 +58,5 @@ Quindi nel caso di un circuito RC, sappiamo che:
 
 Studiamo quindi un RC più complesso, dove ci avvaliamo di Thevenin e poi proviamo a risolvere le equazioni per la carica di un condensatore parzialmente carico a $t = t_{0}$.  
 
-![Image](circuito_rc_thevenin.jpg)  
+![Image](img/lez5/circuito_rc_thevenin.jpg)  
 
