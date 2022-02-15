@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>fisica2_completo.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true},
+      jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
+      TeX: {
+      extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"],
+      equationNumbers: {
+      autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+<h1 id="fisica-2---lezione-1">Fisica 2 - Lezione 1</h1>
+<h2 id="obbiettivo">Obbiettivo:</h2>
+<pre><code>Circuito Reale -&gt; Modello -&gt; Previsione/Comprensione
+</code></pre>
+<hr>
+<h2 id="modelli">Modelli:</h2>
+<ul>
+<li>A Parametri <strong>Concentrati</strong></li>
+<li>A Parametri <strong>Distribuiti</strong></li>
+</ul>
+<p>Il Modello <strong>A Parametri Concentrati</strong> saranno la branca di modelli trattati in questo corso.<br>
+In questi modelli possiamo trattare gli elementi in maniera isolata, senza valutare possibili interferenze interne al circuito stesso.<br>
+Ciò avviene quando la dimensione delle componenti del circuito sono molto minori della lunghezza d'onda minima prodotta dal circuito ($\lambda \gg d$).</p>
+<p>Nel caso di segnali audio:
+$$f_{max} = \frac{c}{\lambda_{min}} \land f_{max} = 20kHz &lt;=&gt; \lambda_{min} = \frac{c}{f_{max}} =&gt; \lambda_{min} \approx 15km$$</p>
+<hr>
+<h2 id="elementi-circuitali">Elementi Circuitali:</h2>
+<p>Tratteremo principalmente elementi circuitali a 2 morsetti.<br>
+Dovremo prima di tutto, per studiare il circuito, definire un verso della corrente, si tratta di un riferimento puramente arbitrario.<br>
+$$V(t) = \Delta V(t) = V_{A}(t) - V_{B}(t), se V_{A}(t) &gt; V_{B}(t) =&gt; V(t) &gt; 0$$<br>
+$V(t)$ è detta quindi tensione di lato ed $I(t)$ è la corrente di lato.</p>
+<hr>
+<h2 id="leggi-di-kirchoff">Leggi Di Kirchoff:</h2>
+<ul>
+<li>KCL: Per ogni circuito a parametri concentrati, per ogni tempo, per ogni nodo, la somma algebrica di tutte le correnti di lato che entrano e lasciano il nodo è uguale a 0.</li>
+<li>KVL: Per ogni circuito a parametri concentrati, per ogni tempo, per ogni maglia, la somma algebrica di tutte le tensioni di lato che entrano ed escono dalla maglia sono uguali a 0.</li>
+</ul>
+<hr>
+<h2 id="elementi-circuitali">Elementi Circuitali:</h2>
+<ul>
+<li>R: Resistenza o Resistore:<br>
+Qualsiasi elemento a 2 morsetti che in qualsiasi istante soddisfa la seguente relazione tra tensione e corrente di lato: $V(t) = I(t)R.$<br>
+Ne esistono di vari tipi:
+<ul>
+<li>Lineare / Non lineare:<br>
+Segue l'equazione lineare di Kirchoff: $V(t) = I(t)R.$<br>
+Anche detti resistori ohmici.</li>
+<li>Tempo Variante / Tempo Invariante:<br>
+Soddisfa la proprietà di tempo invarianza, ossia soddisfa la seguente relazione: $R(t) = R \space \forall t.$</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="fisica-2---lezione-2">Fisica 2 - Lezione 2</h1>
+<h2 id="resistenze">Resistenze:</h2>
+<p>Si possono distinguere in due categorie:</p>
+<p><img src="img/lez2/resistenze_lineari_e_non.jpg" alt="Image" title="icon"></p>
+<p>E anche questi due tipi di resistenze possono essere tempo varianti o tempo invarianti.</p>
+<p>Una resistenza può essere per esempio un filo metallico, e la sua resistenza sarà funzione della lunghezza, della sezione e del materiale. $$R = \rho \cdot \frac{l}{s}$$ Ove vige la relazione $$\rho(T) = \rho(0)(1 + \alpha T)$$ per cui $\alpha$ dipende dal materiale.<br>
+Nella costruzione di resistenze si punta a minimizzare il più possibile $\alpha$, in modo che la resistenza non vari molto in funzione della temperatura.</p>
+<p><img src="img/lez2/resistore_reale.jpg" alt="Image" title="icon"></p>
+<p>Sapendo che $J = \frac{I}{S}$ e che $V(t)=RI(t)$ si può riscrivere la legge di Ohm come:<br>
+$$\rho \cdot \frac{l}{s} \cdot JS = E \cdot l \longrightarrow E = \rho J $$</p>
+<hr>
+<h2 id="resistori-notabili">Resistori Notabili:</h2>
+<ul>
+<li>I resistori LTI seguono l'equazione:<br>
+$$V(t) = R(t) \cdot I(t) \space | \space R = const \space \forall t.$$</li>
+<li>Resistore con $R=+\infty$: è un circuito aperto.</li>
+<li>Resistore con $R=0$: è un corto circuito.</li>
+<li>I resistori Lineari Tempo Varianti, detti anche 'trimmer'.<br>
+Esempio:<br>
+$$R(t) = R_{1} + R_{2}cos(2\pi f_{1}t)$$<br>
+$$I(t) = I_{0}cos(2\pi f_{2}t)$$<br>
+$$V(t) = I_{0}R_{1}cos(2\pi f_{2}t) + \frac{R_{2}I_{0}}{2}cos(2\pi(f_{1}+f{2})t) + \frac{R_{2}I_{0}}{2}cos(2\pi(f_{1}-f_{2})t)$$</li>
+</ul>
+<hr>
+<h2 id="i-generatori">I Generatori:</h2>
+<ul>
+<li>Generatori Di Tensione:<br>
+Un generatore di tensione è un elemento circuitale a due terminali che mantiene una certa tensione ai capi dei terminali per ogni corrente $I(t)$ che fluisce attraverso di esso.<br>
+La batteria è un esempio di generatore di tensione.<br>
+Spegnere un generatore di tensione equivale ad un cortocircuito.</li>
+<li>Generatori Di Corrente:
+Un generatore di corrente è un elemento circuitale a due terminali che mantiene una certa corrente ai capi dei terminali per ogni tensione $V(t)$ che fluisce attraverso di esso.
+Spegnere un generatore di corrente equivale ad un circuito aperto.</li>
+</ul>
+<p>Un generatore non ideale di tensione:</p>
+<p><img src="img/lez2/generatore_non_ideale.jpg" alt="Image" title="icon"></p>
+<p>Segue l'equazione: $V_{L} = V_{OC} - R_{S}I_{L}$<br>
+Ossia la tensione erogata dipende dalla corrente erogata e dalla resistenza interna, e quindi dalla qualità costruttiva.<br>
+Ciò implica che possiamo modellare un generatore reale come un generatore reale con una resistenza parasidica in serie.</p>
+<hr>
+<h2 id="il-teorema-di-thevenin">Il Teorema Di Thevenin:</h2>
+<p>Qualsiasi circuito a due terminali contenente dei generatori indipendenti complesso a piacere è sempre riportabile ad un circuito equivalente composto da un generatore di tensione in serie ad un resistore.</p>
+<p><img src="img/lez2/teorema_di_thevenin.jpg" alt="Image" title="icon"></p>
+<hr>
+<h2 id="il-teorema-di-norton">Il Teorema Di Norton:</h2>
+<p>Qualsiasi circuito a due terminali costituito da elementi lineari e generatori indipendenti complesso a piacere è equivalente ad una sorgente di corrente con un resistore in parallelo.</p>
+<p><img src="img/lez2/teorema_di_norton.jpg" alt="Image" title="icon"></p>
+<p>Si noti la similarità tra i due teoremi.<br>
+Esempio di applicazione di entrambi:</p>
+<p><img src="img/lez2/similarità_tra_thevenin_e_norton.jpg" alt="Image" title="icon"></p>
+<p>La potenza di un circuito si definisce come: $P_{L} = V_{L} \cdot I_{L}$<br>
+Se $R_{L} = 0 \Longrightarrow V_{L} = 0V, I_{L} = \frac{V}{R_{S}} \Longrightarrow P_{L} = 0W$<br>
+Se $R_{L} = \infty \Longrightarrow V_{L} = V, I_{L} = 0A \Longrightarrow P_{L} = 0W$</p>
+<p>Per un circuito generico contenente un generatore di tensione ideale con resistenza parasidica in serie, ed una resistenza di carico sappiamo che:<br>
+$$P_{L} = V_{L}I_{L} = R_{L}I_{L}^2 = \frac{V_{L}^2}{R_{L}}$$<br>
+$$V_{L} = \frac{VR_{L}}{R_{S}+R_{L}} \cdot \frac{V}{R_{S}+R_{L}} = \frac{V^2R_{L}}{(R_{S}+R_{L})^2} = \frac{V^2}{(\frac{R_{S}^2}{R_{L}}+R_{L}+2R_{S})}$$<br>
+Volendo massimizzare la potenza deriviamo per $R_{L}$:<br>
+$$\frac{d}{dR_{L}}(\frac{R_{S}^2}{R_{L}}+R_{L}+2R_{S}) = -\frac{R_{S}^2}{R_{L}^2}+1 = 0$$<br>
+Ciò implica che: $R_{S} = \sqrt{R_{L}^2} = R_{L}.$
+Ossia, per ottenere la potenza massima possibile, il nostro circuito dovrà avere una resistenza di carico $R_{L}$ uguale alla resistenza parasidica del generatore $R_{S}$.</p>
+<hr>
+<h1 id="fisica-2---lezione-3">Fisica 2 - Lezione 3</h1>
+<h2 id="condensatori">Condensatori:</h2>
+<p>Possono essere sia lineari che non. In ogni caso si tratta di componenti elettriche che mettono in relazione tensione e carica.</p>
+<p><img src="img/lez3/condensatore_lineare_e_non.jpg" alt="Image"></p>
+<p>Noi studieremo i condensatori lineari, ossia quelli che soddisfano la relazione: $Q(t) = C(t)V(t) : C(t) = const \space \forall t.$</p>
+<hr>
+<h2 id="i-condensatori-lti">I Condensatori LTI:</h2>
+<p>Seguono l'equazione fondamentale: $Q(t) = C\cdot V(t).$<br>
+Noi sappiamo che: $I(t) = \frac{d}{dt}Q(t) = \frac{d}{dt}(C\cdot V(t)) = C\cdot\frac{dV(t)}{dt}$<br>
+Da ciò possiamo ricavare un'equazione in cui esplicitiamo la tensione:<br>
+$$\int_{0}^t{I(\tau)d\tau} = \int_{0}^t{C\frac{d}{dt}V(t)dt} = \int_{V(0)}^{V(t)}{C\cdot dV(\tau)}$$<br>
+Da cui ricaviamo che: $V(t)-V(0) = \frac{1}{C}\int_{a}^b{I(\tau)d\tau}$<br>
+Queste saranno le equazioni fondamentali dei condensatori lineari:<br>
+$$I(t) = C\cdot\frac{d}{dt}V(t)$$<br>
+$$\Delta V = \int_{a}^{b}{I(\tau)d\tau}$$<br>
+Quest'ultima equazione è spesso scritta nella forma:<br>
+$$V(t) = V(0) + \int_{0}^{t}{I(\tau)d\tau}$$<br>
+Questa equazione in particolare ha delle implicazioni importanti, ci dice che la tensione ad un dato istante dipende dal passato del condensatore. Si può quindi modellare un condensatore carico a $V(0) = V_{0}$ come un circuito composto dallo stesso condensatore scarico in serie ad un generatore di tensione con tensione nominale $V_0$.</p>
+<p><img src="img/lez3/condensatore_effetto_memoria.jpg" alt="Image"></p>
+<p>Un esempio di utilizzo di queste formule:</p>
+<p><img src="img/lez3/esempio_esercizio_condensatore.jpg" alt="Image"></p>
+<p>Inoltre ricordiamo che la tensione di un condensatore è una quantità continua, a prescindere dal comportamento della corrente.<br>
+Fisicamente parlando un condensatore è formato da due piastre metalliche parallele, la capacità è funzione della geometria: $C = \frac{\epsilon_{0}\cdot S}{d}$</p>
+<hr>
+<h2 id="induttori">Induttori:</h2>
+<p>E' un componente a due terminali che per ogni tempo 't' è caratterizzato dall'imporre una relazione ben definita tra il flusso del campo magnetico e la corrente che lo attraversa: $\Phi(B(t)) = f(I(t))$.<br>
+In particolare noi studieremo gli induttori lineari tempo invarianti per cui vige la relazione: $\Phi(B(t)) = L(t)I(t) : L(t) = L = const \space \forall t$.<br>
+Questa relazione di per se però non ci aiuta molto nella risoluzione di un circuito. Però noi sappiamo grazie alla legge di faraday che:<br>
+$$\Delta V(t) = \frac{d\Phi(B(t))}{dt} = \frac{d}{dt}(L\cdot I(t))$$<br>
+Da cui ricaviamo la relazione:<br>
+$$\Delta V(t) = L\cdot\frac{dI(t)}{dt}$$<br>
+Che ci dice che la tensione di un induttore è funzione della variazione della corrente che lo attraversa.<br>
+Potrebbe tornare utile avere una relazione che esplica la corrente in funzione del tempo:<br>
+$$I(t)-I(0)=\frac{1}{L}\int_{0}^{t}V(\tau)d\tau$$<br>
+Scritto spesso come:<br>
+$$I(t) = I(0) + \frac{1}{L}\int_{0}^{t}V(\tau)d\tau$$<br>
+Equazione molto importante che ci dice che la corrente sarà sempre continua, a prescindere dalla forma d'onda della tensione.<br>
+Fisicamente parlando, un induttore è un pacco di spire, detto anche solenoide, e l'induttanza è funzione della geometria:<br>
+$$B_{0} = \mu_{0}\frac{N}{l}I$$<br>
+$$\Phi(B_{0}) = NSB_{0}$$<br>
+Da cui ricaviamo che:<br>
+$$L = \mu_{0}\pi R^2\cdot\frac{N^2}{l}$$</p>
+<hr>
+<h1 id="fisica-2---lezione-4">Fisica 2 - Lezione 4</h1>
+<h2 id="il-solenoide">Il Solenoide:</h2>
+<p>Per ricavare il coefficiente di autoinduzione $L$ di un solenoide, immaginiamo di averne uno infinito.<br>
+Definiamo la densità di spire come $n = \frac{N}{l}$.<br>
+Noi sappiamo che gli induttori seguono la legge: $\Phi(B(t)) = L\cdot I(t)$.<br>
+Preso un cammino chiuso perpendicolare alle spire otteniamo che $B_{0} = \mu_{0}\frac{N}{l}I\space$, e $\Phi(B_{0}) = B_{0}NS = \mu_{0}\frac{N}{l}INS$.<br>
+Per cui otteniamo: $L = \mu_{0}\frac{N^2}{l}\pi R^2 = \mu_{0}n^2l\pi R^2$.</p>
+<hr>
+<h2 id="potenza-ed-energia">Potenza Ed Energia:</h2>
+<p>Dato un circuito composto da un generatore ed un bipolo, ossia un componente di un circuito formato da un ingresso e da un'uscita, la corrente entrante dovrà per forza essere uguale alla corrente uscente, e ai capi di questi poli ci sarà una certa differenza di potenziale, la potenza si può calcolare come $P(t) = V(t)I(t)$.<br>
+Mentre l'energia si può calcolare come $E(t_{1}, t_{2}) = \int_{t_{1}}^{t_{2}}P(\tau)d\tau$.</p>
+<p><br></br></p>
+<p>Preso un <strong>resistore</strong> generico, non necessariamente lineare, se i punti della retta sul grafico di tensione e corrente sono sul primo e terzo quadrante, il resistore ad ogni istante avrà una potenza positiva,e quindi si chiama componente passivo, in quanto dissipa energia.</p>
+<p><br></br></p>
+<p>Preso un <strong>condensatore</strong> generico, l'energia necessaria a caricarlo sarà data dalla stessa formula: $E(t_{1}, t_{2}) = \int_{t_{1}}^{t_{2}}V(\tau)I(\tau)d\tau=\int_{t_{1}}^{t_{2}}V(\tau)\frac{dQ(\tau)}{d\tau}d\tau$<br>
+Ciò si può riscrivere come:<br>
+$$E(t_{1}, t_{2}) = \int_{Q(t_{1})}^{Q(t_{2})}V(Q)dQ = \int_{Q(t_{1})}^{Q(t_{2})}\frac{Q(t)}{C}dQ=\frac{1}{2C}Q^2$$<br>
+Posto che $Q(t_{1}) = 0 \space \land Q(t_{2}) = Q$.</p>
+<p><br></br></p>
+<p>Preso un <strong>induttore</strong> generico, l'energia necessaria a caricarne il campo magnetico si può definire come:<br>
+$$E(t_{1}, t_{2}) = \int_{t_{1}}^{t_{2}}V(\tau)I(\tau)d\tau=\int_{t_{1}}^{t_{2}}\frac{d\Phi(B(t))}{dt}\cdot \frac{\Phi(B(t))}{L}dt$$
+Ciò si può riscrivere come:<br>
+$$\int_{\Phi(B(t_{1}))}^{\Phi(B(t_{2}))}\frac{\Phi(B(t))}{L}d\Phi(B(t)) = \frac{\Phi(B(t))^2}{2L}=\frac{LI^2(t)}{2}$$</p>
+<hr>
+<h2 id="diagramma-riassuntivo">Diagramma Riassuntivo:</h2>
+<p>Riporto qui sotto un diagramma riassuntivo di tutte le componenti studiate nelle ultime lezioni, e tutte le relazioni più importanti che comportano.</p>
+<p><img src="img/lez4/grafico_riassuntivo_componenti_passive.jpg" alt="Image"></p>
+<hr>
+<h2 id="reti-di-resistori">Reti di Resistori:</h2>
+<p>Nel caso di resistenze in serie, si può dimostrare che $R_{eq} = \Sigma_{i=1}^{n}R_i$.</p>
+<p><img src="img/lez4/dimostrazione_resistenze_in_serie.jpg" alt="Image"></p>
+<p>Nel caso di generatori in serie, se sono di tensione si possono banalmente sommare le tensioni, mentre nel caso di generatori di corrente bisogna far attenzione che KCL deve valere!</p>
+<p><img src="img/lez4/generatori_in_serie.jpg" alt="Image"></p>
+<p>Nel caso di resistori in parallelo invece, si può dimostrare che $\frac{1}{R_{eq}} = \frac{1}{\Sigma_{i=1}^{n}R_i}$.</p>
+<p><img src="img/lez4/dimostrazione_resistenze_in_parallelo.jpg" alt="Image"></p>
+<p>Nel caso di condensatori in serie, si può dimostrare che $\frac{1}{C_{eq}} = \Sigma_{i=1}^{n}\frac{1}{C_i}$.</p>
+<p><img src="img/lez4/dimostrazione_condensatori_in_serie.jpg" alt="Image "></p>
+<p>Nel caso di condensatori in parallelo invece, si può dimostrare che $C_{eq} = \Sigma_{i=1}^{n}C_i$.</p>
+<p><img src="img/lez4/dimostrazione_condensatori_in_parallelo.jpg" alt="Image"></p>
+<p>Nel caso di induttori in serie, si può dimostrare che $L_{eq} = \Sigma_{i=1}^{n}L_i$.</p>
+<p><img src="img/lez4/dimostrazione_induttori_in_serie.jpg" alt="Image"></p>
+<p>Nel caso di induttori in parallelo, si può dimostrare che $L_{eq} = \frac{1}{\Sigma_{i=1}^{n}\frac{1}{L_i}}$.</p>
+<p><img src="img/lez4/dimostrazione_induttori_in_parallelo.jpg" alt="Image"></p>
+<p>Quindi possiamo riassumere in un diagramma riassuntivo tutto ciò:</p>
+<p><img src="img/lez4/grafico_riassuntivo_serie_parallelo.jpg" alt="Image"></p>
+<hr>
+<h1 id="fisica-2---lezione-5">Fisica 2 - Lezione 5</h1>
+<h2 id="principio-della-sovrapposizione">Principio Della Sovrapposizione:</h2>
+<p>Si definisce un circuito lineare, un circuito formato da elementi passivi lineari accoppiati da generatori indipendenti.<br>
+Si definisce un circuito tempo invariante se gli elementi passivi sono tempo invarianti, i generatori basta che siano indipendenti.<br>
+Il principio della sovrapposizione ci dice che in un circuito lineare, contenente più generatori indipendenti, la corrente/tensione di lato di una componente è equivalente alla somma algebrica delle correnti/tensioni di lato di tali componenti in tutti i circuiti composti dalla stessa rete ed un solo generatore acceso alla volta.</p>
+<p>Esempio:</p>
+<p><img src="img/lez5/principio_della_sovrapposizione.jpg" alt="Image"></p>
+<p>Torna comodo in certe situazione per evitare di scomodare le leggi di kirchhoff dei nodi e delle maglie.</p>
+<hr>
+<h2 id="lo-switch">Lo switch:</h2>
+<p>All'interno di un circuito si può trovare una componente che fa da selettore all'interno del circuito, e quindi a seconda della sua posizione conclude un circuito a se stante.</p>
+<p>Esempio:</p>
+<p><img src="img/lez5/soluzione_circuito_rc.jpg" alt="Image"></p>
+<hr>
+<h2 id="risposta-ad-ingresso-zero">Risposta Ad Ingresso Zero:</h2>
+<p>Proviamo ora a descrivere la carica del condensatore, da scarico, allo stesso modo in cui abbiamo calcolato la sua scarica nell'esempio precedente.</p>
+<p><img src="img/lez5/soluzione_circuito_rc_carica.jpg" alt="Image"></p>
+<p>Se risolvo il circuito soggetto ad un ingresso nel momento in cui non c'è energia immagazzinata in alcuna componente(capacitiva/induttiva) allora tale risposta è detta risposta a stato zero.</p>
+<p>Quindi nel caso di un circuito RC, sappiamo che:</p>
+<ul>
+<li>La risposta con ingresso zero è: $V_{C}(t) = V_{0}\cdot e^{-\frac{t}{RC}}$</li>
+<li>La risposta a stato zero è: $V_{C}(t) = V_{0}(1-e^{-\frac{t}{RC}})$</li>
+</ul>
+<p>Studiamo quindi un RC più complesso, dove ci avvaliamo di Thevenin e poi proviamo a risolvere le equazioni per la carica di un condensatore parzialmente carico a $t = t_{0}$.</p>
+<p><img src="img/lez5/circuito_rc_thevenin.jpg" alt="Image"></p>
+<hr>
+<h1 id="fisica-2---lezione-6">Fisica 2 - Lezione 6</h1>
+<h2 id="il-circuito-rc">Il circuito RC:</h2>
+<p>Riprendendo da dove ci siamo lasciati nella lezione precedente, avevamo calcolato analiticamente applicando le leggi di kirchoff la risposta generale di un circuito RC, ad un segnale, con condensatore parzialmente carico.</p>
+<p><img src="img/lez5/circuito_rc_thevenin.jpg" alt="Image"></p>
+<p>Notiamo che questa equazione:<br>
+$$V_{C}(t) = V_{0}e^{-\frac{t}{R_{eq}C}}+V_{eq}(1-e^{-\frac{t}{R_{eq}C}})$$<br>
+<strong>E' la somma algebrica di risposta a stato zero e risposta ad ingresso zero</strong>, infatti:</p>
+<ul>
+<li>Risposta Ad Ingresso Zero: $V_{0}\cdot e^{-\frac{t}{R_{eq}C}}$</li>
+<li>Risposta A Stato Zero: $V_{eq}(1-e^{-\frac{t}{R_{eq}C}})$</li>
+</ul>
+<p>Questa proprietà si preserva nei circuiti lineari.
+La risposta generale di un circuito è data dalla somma della risposta a stato zero e la risposta ad ingresso zero.</p>
+<p>Proviamo quindi a dimostrarlo, partendo dall'equazione differenziale:<br>
+$$\frac{d}{dt}V_{C}(t)+\frac{1}{R_{eq}C}V_{C}(t)=\frac{1}{R_{eq}C}V_{eq}$$<br>
+Dividiamo quindi il problema nei due casi:</p>
+<ul>
+<li>Il caso della <strong>risposta ad ingresso zero</strong>:<br>
+E quindi otteniamo l'equazione omogenea associata:<br>
+$$\frac{d}{dt}V_{C}^{O}(t)+\frac{1}{R_{eq}C}V_{C}^{O}(t)=0$$</li>
+<li>Il caso della <strong>risposta a stato zero</strong>:<br>
+Da cui otteniamo l'equazione non omogenea:<br>
+$$\frac{d}{dt}V_{C}^{NO}(t)+\frac{1}{R_{eq}C}V_{C}^{NO}(t)=\frac{1}{R_{eq}C}V_{eq}$$<br>
+Ricordiamoci inoltre che dividendo il problema in due, nel caso della risposta ad ingresso zero dobbiamo ricordare che $V_{C}^{O}(0) = V_{0}$, mentre nel caso della risposta a stato zero $V_{C}^{NO}(0) = 0$.</li>
+</ul>
+<p>A questo punto sommiamo le due equazioni e otteniamo:<br>
+$$\frac{d}{dt}(V_{C}^{O}(t)+V_{C}^{NO}(t))+\frac{1}{R_{eq}C}(V_{C}^{O}(t)+V_{C}^{NO}(t))=\frac{1}{R_{eq}C}V_{eq}$$<br>
+E ricordiamo anche di sommare le condizioni iniziali, quindi: $V_{C}(0)=V_{0}+0$.<br>
+Da qua è facile notare che, essendo questa e l'equazione differenziale iniziale perfettamente equivalenti, ed essendo entrambi problemi di Cauchy, ossia problemi ad una sola soluzione, con le stesse condizioni di bordo, deve per forza valere la relazione: $V_{C}(t) = V_{C}^{O}(t)+V_{C}^{NO}(t)$.<br>
+In altre parole, <strong>la risposta generale di un circuito RC è data dalla somma della risposta ad ingresso zero e la risposta a stato zero</strong>.<br>
+Si può inoltre dimostrare che l'equazione differenziale iniziale è una funzione lineare, quindi: $f(\alpha x(t)+\beta y(t))=\alpha f(x(t))+\beta f(y(t))$, ed in particolare si può dimostrare che la risposta a stato zero è una funzione lineare.</p>
+<hr>
+<h2 id="il-principio-di-sovrapposizione">Il Principio Di Sovrapposizione:</h2>
+<p>Possiamo quindi affermare, avendolo dimostrato formalmente, ciò che ci dice il Principio Di Sovrapposizione:<br>
+<strong>La risposta di una rete lineare con stato zero dovuta a tutti i generatori indipendenti è equivalente alla somma delle risposte a stato zero dovute ai singoli generatori indipendenti.</strong></p>
+<hr>
+<h2 id="i-filtri-rc">I filtri RC:</h2>
+<p>Ridisegniamo il circuito RC ponendo due capi alle estremità del condensatore, come se fosse un bipolo.<br>
+Notiamo che, risolvendo l'equazione differenziale, sotto la supposizione che $V_{IN}\gg V_{OUT}$, il circuito RC si comporta da integratore, ossia $V_{OUT}$ è determinato dall'integrale di $V_{IN}$ a meno di una costante $\frac{1}{RC}$.</p>
+<p><img src="img/lez6/circuito_rc_filtro_integrativo.jpg" alt="Image"></p>
+<p>Notiamo un comportamento del circuito, sotto queste condizioni, di tipo integrativo, ossia $V_{OUT}$ amplifica le lente fluttuazioni di tensione e riduce le veloci fluttuazioni di tensione di $V_{IN}$.</p>
+<p>Ridisegnando lo stesso circuito, ma questa volta scambiando resistenza e condensatore otteniamo:</p>
+<p><img src="img/lez6/circuito_rc_filtro_derivativo.jpg" alt="Image"></p>
+<p>Notiamo un comportamento diverso del circuito, sotto queste nuove condizioni. Ossia si comporta da derivatore, amplificando le veloci fluttuazioni di tensione e riducendo le lente fluttuazioni di tensione di $V_{IN}$.</p>
+<p>Da ciò ricaviamo uno dei motivi più comuni per cui si incontrano gli RC all'interno dei circuiti elettrici:</p>
+<ul>
+<li>Svolgono il lavoro di un filtro, una resistenza ed una resistenza in serie fanno si che il secondo capo del condensatore avrà una tensione che è equivalente a quella di ingresso a meno della componente continua, e quindi svolge il lavoro di tagliare la componente continua della forma d'onda, anche detto <em>coupling AC</em>.</li>
+<li>Se incontrati come nei circuiti negli esempi prima citati svolgono il lavoro rispettivamente di filtri passa-basso(integrativo) e passa-alto(derivativo).</li>
+</ul>
+<hr>
+<h2 id="il-circuito-rl">Il circuito RL:</h2>
+<p>Proviamo ora a scambiare il condensatore con un induttore.</p>
+<p><img src="img/lez6/soluzione_circuito_rl_carica.jpg" alt="Image"></p>
+<p>Notiamo che la corrente che scorre nell'induttore istantaneamente sarà nulla e col passare del tempo incrementerà con un andamento identico alla tensione nel caso della carica di un condensatore, a meno di costanti moltiplicative e di tempo.<br>
+Anche in questo caso possiamo definire una costante di tempo $\tau = \frac{L}{R}$.</p>
+<p>Ora studiamo il comportamento del circuito RL in scarica, quando il campo magnetico dell'induttore è carico, ossia la corrente che scorre per l'induttore è massima, e viene chiuso il circuito staccando la batteria.</p>
+<p><img src="img/lez6/soluzione_circuito_rl_scarica.jpg" alt="Image"></p>
+<p>Notiamo che l'equazione che determina l'andamento della corrente attraverso l'induttore è la stessa che determina l'andamento della tensione attraverso il condensatore, a meno di costanti moltiplicative e di tempo.<br>
+Ricordiamo inoltre che $V_{L}=-V_{R}=-V_{IN}\cdot e^{-\frac{R}{L}t}$, ossia <strong>la tensione attraverso l'induttore è in opposizione a quella attraverso il resistore, in quanto egli si oppone alla variazione di corrente!</strong></p>
+<hr>
+<h1 id="fisica-2---lezione-7">Fisica 2 - Lezione 7</h1>
+<h2 id="il-circuito-rl">Il circuito RL:</h2>
+<p>Studieremo ora il circuito RL della lezione precedente, utilizzando la funzione di Heaviside, o funzione gradino, per indicare lo spostamento dello switch dalla posizione B alla posizione A e viceversa.</p>
+<p><img src="img/lez7/funzione_heaviside.jpg" alt="Image"></p>
+<p>Questo è un buon modo per formalizzare il funzionamento di un interruttore all'interno di un circuito.<br>
+Possiamo quindi esplicitare una formula che determini la tensione attraverso un condensatore in un RC, sia esso parallelo o in serie che soddisfi $\forall t \in \R$, sfruttando la funzione di Heaviside.</p>
+<p><img src="img/lez7/equazione_generale_circuito_rc_parallelo.jpg" alt="Image"></p>
+<hr>
+<h2 id="loperatore-risposta-stato-zero">L'Operatore Risposta Stato Zero:</h2>
+<p>Definiamo quindi l'operatore <strong>Risposta A Stato Zero</strong>:<br>
+$$V(t) = \mathscr{Z_{0}}(I_{S}(t))$$<br>
+Riscriviamo il problema di cauchy dell'ultimo circuito RC trattato:<br>
+$$C\frac{dV(t)}{dt}-\frac{V(t)}{R}=I_{S}(t) \land V(0) = 0$$<br>
+E ricordiamoci che la forma d'onda della corrente era:<br>
+$$I_{S}(t) = I_{0}\cdot H(t)$$<br>
+Cosa succede allora se decido di traslare l'ingresso:<br>
+$$I_{\Delta t}(t+\Delta t) = I_{S}(t)$$<br>
+Che è la stessa cosa di dire:<br>
+$$I_{\Delta t}(t) = I_{S}(t-\Delta t)$$<br>
+Quindi $I_{\Delta t}(t)$ è solo il traslato a destra del gradino.<br>
+Se volessi scoprire il $V(t)$ causato da questa nuova corrente, devo per forza rivalutare l'intera equazione differenziale o esiste una via più semplice?<br>
+Ipotizziamo che la traslazione degli argomenti delle funzioni dipendenti dal tempo nel problema di cauchy possa esser soluzione:<br>
+$$C\frac{dV(t-\Delta t)}{dt}-\frac{V(t-\Delta t)}{R}=I_{S}(t-\Delta t) \land t \ge \Delta t$$<br>
+Definiamo ora : $y(t) = V(t-\Delta t)$ ove $V(t-\Delta t)$ è la soluzione del problema di cauchy originale, traslata.<br>
+Allora $y(\Delta t) = V(\Delta t - \Delta t) = V(0)$.<br>
+E' evidente quindi che il problema di cauchy:<br>
+$$C\frac{dy(t)}{dt}-\frac{y(t)}{R}=I_{\Delta t}(t) \space \land y(\Delta t) = 0$$<br>
+E' lo stesso problema di cauchy iniziale, ma con la condizione di bordo traslata.<br>
+Ciò implica la <strong>tempo invarianza</strong> dell'operatore risposta a stato zero.<br>
+Inoltre è di facile dimostrazione che l'operatore a stato zero <strong>è lineare</strong>.</p>
+<hr>
+<h2 id="loperatore-traslazione-temporale">L'Operatore Traslazione Temporale:</h2>
+<p>Viene definito come: $\mathscr{T_{\Delta t}}\space$ l'<strong>operatore traslazione temporale</strong>, che prende come argomento una funzione e la trasla di un $\Delta t$.<br>
+Quindi:<br>
+$$\mathscr{T_{\Delta t}}(f(t)) = f(t-\Delta t)$$<br>
+Questo oggetto gode di due proprietà:</p>
+<ul>
+<li>Additività: $\mathscr{T_{\Delta t}}(f(t)+g(t)) = \mathscr{T_{\Delta t}}(f(t)) + \mathscr{T_{\Delta t}}(g(t))$</li>
+<li>Omogeneità: $\mathscr{T_{\Delta t}}(Af(t)) = A\mathscr{T_{\Delta t}}(f(t))$</li>
+</ul>
+<p>Quindi l'operatore traslazione temporale <strong>è lineare</strong>.</p>
+<p>Un'ulteriore proprietà molto importante è che l'operatore traslazione temporale e l'operatore risposta a stato zero <strong>commutano</strong>:<br>
+$$\mathscr{T_{\Delta t}}(\mathscr{Z_{0}}(I(t)))=\mathscr{Z_{0}}(\mathscr{T_{\Delta t}}(I(t)))=\mathscr{Z_{0}}(I(t-\Delta t))$$<br>
+Questa proprietà è valida $\forall I(t), \forall t, \forall \Delta t:\Delta t \ge 0$.</p>
+<hr>
+<h2 id="la-delta-di-dirac">La Delta Di Dirac:</h2>
+<p>Definiamo ora la Delta Di Dirac, una distribuzione $\delta(t)$ che soddisfa la proprietà:<br>
+$$\int_{-\infty}^{+\infty}\delta(t)f(t)dt=f(0), \forall f(t)$$<br>
+Inoltre, se $f(t) = 1 \Longrightarrow A_{\delta(t)}=1$, notiamo che l'area sottesa dalla delta è uguale a 1, nonostante sia un impulso infinitamente stretto.<br>
+La risposta a stato zero alla delta di Dirac prende il nome di <strong>Risposta All'Impulso</strong>: $h(t)$, mentre la risposta a stato zero al gradino unitario prende il nome di <strong>Risposta Al Gradino Unitario</strong> e viene spesso rappresentata con $g(t)$.<br>
+Definiamo allora una funzione che approssimi la delta di Dirac:<br>
+$$P_{d}(t):=0\space se\space t&lt;0$$<br>
+$$P_{d}(t):=\frac{1}{d}\space se\space 0\le t\le d$$<br>
+$$P_{d}(t):=0\space se\space t&gt;d$$<br>
+Notare che soddisfa la proprietà di avere un'area pari a 1.<br>
+Sappiamo inoltre che $\lim_{d \to 0}P_{d}(t)=\delta(t)$.<br>
+Proviamo quindi a vedere cosa succede se applichiamo un simile segnale all'ingresso di un RC e lo mandiamo al limite per $d \to 0$.</p>
+<p><img src="img/lez7/risposta_impulsiva_circuito_rc.jpg" alt="Image"></p>
+<p>Come possiamo vedere, al limite $d \to 0$ la nostra risposta impulsiva tende a $h(t)=\frac{1}{C}e^{-\frac{t}{RC}}$<br>
+Inoltre nel periodo infinitesimale di impulso $0 &lt; t &lt; d$ sappiamo che la tensione nel condensatore sale in maniera lineare, infatti:<br>
+$$\lim_{d \to 0}\frac{R}{d}(1-e^{-\frac{t}{RC}})=\frac{R}{d}(1-1+\frac{t}{RC})=\frac{t}{dC}$$<br>
+E la pendenza della retta che formerà la tensione in quell'istante sarà:<br>
+$$\frac{d}{dt}\frac{t}{dC}=\frac{1}{dC}$$<br>
+Da cui possiamo notare che questa pendenza dipende fondamentalmente da due cose, dal quanto è stretto, istantaneo, l'impulso, e da quanta carica è in grado di immagazzinare il condensatore.<br>
+Per evitare di dover sempre specificare $t\ge0$ possiamo riscrivere l'equazione finale come:<br>
+$$h(t) = H(t)\cdot\frac{1}{C}e^{-\frac{t}{RC}}$$<br>
+Nella prossima lezione verrà trattato come è dimostrabile che vale la proprietà:<br>
+$$h(t) = \frac{d}{dt}g(t)$$<br>
+Ossia la risposta all'impulso è equivalente alla derivata della risposta al gradino unitario.</p>
+<hr>
+<h1 id="fisica-2---lezione-8">Fisica 2 - Lezione 8</h1>
+<h2 id="le-risposte-al-gradino-ed-allimpulso">Le risposte al gradino ed all'impulso:</h2>
+<p>Nell'ultima lezione ci siamo lasciati dichiarando una proprietà importantissima dei circuiti lineari, ossia che la risposta impulsiva non è altro che la derivata della risposta al gradino:<br>
+$$h(t) = \frac{d}{dt}g(t)$$<br>
+Possiamo dimostrarlo prendendo in esame il circuito studiato l'ultima volta:</p>
+<p><img src="img/lez8/dimostrazione_ht_gt.jpg" alt="Image"></p>
+<p>Come possiamo vedere, sfruttando alcune proprietà degli operatori definiti a lezione, e ridefinendo $P_{d}(t)$ con l'utilizzo della funzione di Heaviside, riusciamo a dimostrare matematicamente che $h(t)$ è la derivata della risposta al gradino del circuito, per ogni circuito lineare.</p>
+<hr>
+<h2 id="esercizio-per-casa">Esercizio Per Casa:</h2>
+<p>Ci viene proposto di applicare questa proprietà su un circuito RL in serie, calcolando quindi entrambe le risposte e provando a verificare che la risposta all'impulso sia effettivamente pari alla derivata della risposta al gradino.</p>
+<p><img src="img/lez8/soluzione_circuito_rl_serie.jpg" alt="Image"></p>
+<p>Si può partire quindi da questa soluzione alla risposta al gradino, e calcolare la risposta all'impulso:</p>
+<p>$$g(t) = H(t)\frac{1}{R}(1-e^{-\frac{t}{\tau}})$$<br>
+$$h(t) = \frac{d}{dt}(g(t))=H(t)\frac{e^{-\frac{t}{\tau}}}{L}$$</p>
+<p>$$g(t) = \int_{-\infty}^{+\infty}\frac{1}{L}H(t)e^{-\frac{t}{\tau}}dt=\int_{0}^{t}\frac{1}{L}e^{-\frac{t}{\tau}}dt=\frac{1}{R}(1-e^{-\frac{t}{\tau}})$$</p>
+<hr>
+<h2 id="i-circuiti-rlc">I Circuiti RLC:</h2>
+<p>Studiamo quindi ora la risposta ad ingresso zero, di un circuito RLC parallelo, con condensatore carico parzialmente.</p>
+<p><img src="img/lez8/circuito_rlc_parallelo.jpg" alt="Image"></p>
+<p>Arriviamo di fronte ad un problema di Cauchy composto da un'equazione differenziale di secondo ordine omogenea e due equazioni di contorno.</p>
+<p><img src="img/lez8/studio_eq_diff_secondo_grado.jpg" alt="Image"></p>
+<p>Notiamo quindi che nello studiare l'equazione caratteristica associata all'equazione differenziale di secondo grado, abbiamo 3 possibili scenari:<br>
+$\Delta &gt; 0\space$ Detto <strong>Caso Sovrasmorzato</strong><br>
+$\Delta &lt; 0\space$<br>
+$\Delta = 0\space$</p>
+<hr>
+<h1 id="fisica-2---lezione-9">Fisica 2 - Lezione 9</h1>
+<h2 id="il-circuito-rlc">Il Circuito RLC:</h2>
+<p>Riprendendo dall'ultima lezione, in cui abbiamo trovato l'equazione differenziale di secondo grado ed abbiamo iniziato ad analizzarla:</p>
+<p><img src="img/lez9/analisi_eq_diff_secondo_grado.jpg" alt="Image"></p>
+<p>Da questa analisi riusciamo a trovare vari possibili scenari.<br>
+Il nostro segnale può smorzarsi molto rapidamente, può oscillare nello smorzarsi oppure può smorzarsi con una gobba, causata da quel termine lineare al tempo nel caso $\Delta=0$.<br>
+Proviamo quindi a studiare il primo caso:</p>
+<p><img src="img/lez9/analisi_eq_diff_sovrasmorzato.jpg" alt="Image"></p>
+<p>Questa è la soluzione generale dell'equazione che descrive la corrente all'interno dell'induttore di un circuito RLC parallelo nello specifico caso sovrasmorzato.<br>
+Studiamo ora anche il caso sottosmorzato nello specifico:</p>
+<p><img src="img/lez9/analisi_eq_diff_sottosmorzato.jpg" alt="Image"></p>
+<p>Troviamo quindi un'equazione per determinare quale sarà la fase iniziale della corrente nel caso di un'oscillazione dovuta ad un circuito di tipo sottosmorzato.</p>
+<p>Definiamo ora una nuova costante del circuito RLC, detta <strong>Fattore Di Qualità</strong>, o $Q$, che è lo smorzamento relativo dell'oscillazione, definito come:<br>
+$$Q = \frac{\omega_{0}}{2\alpha} = \frac{RC}{\sqrt{LC}} = R\sqrt{\frac{C}{L}}$$<br>
+Questa equazione chiaramente vale per i circuiti RLC in parallelo, nel caso apportassimo modifiche alla topologia della rete, cambierebbe anche la formula di $Q$.<br>
+$Q$ è un valore indicativo che ci dice quanta energia c'è nel sistema rispetto a quanta ne viene dissipata.<br>
+$$Q\space\alpha\space\frac{E_{sistema}}{E_{dissipata}}$$<br>
+Proviamo ora a misurare il $Q$ nelle varie casistiche dell'equazione differenziale:<br>
+$$\Delta &gt; 0 : \alpha &gt; \omega_{0} \Longrightarrow Q &lt; \frac{1}{2}$$<br>
+$$\Delta &lt; 0 : Q &gt; \frac{1}{2}, se \space\alpha \to \infty \Longrightarrow Q \to \infty$$<br>
+$$\Delta = 0 : x_{\frac{1}{2}}=-\alpha=-\omega_{0}\Longrightarrow Q = \frac{1}{2}$$<br>
+$$\alpha \to 0 : Re(x_{\frac{1}{2}}) = 0, Im(x_{\frac{1}{2}}) \ne 0 \Longrightarrow Q \to \infty$$</p>
+<p>Ciò che abbiamo determinato fin'ora è stata la <strong>risposta ad ingresso zero</strong> del circuito RLC parallelo. Proviamo ora a studiarne invece la <strong>risposta a stato zero</strong>, ossia ciò che accade nel momento in cui il circuito da spento viene alimentato in qualche modo.</p>
+<p><img src="img/lez9/analisi_eq_diff_non_omogenea.jpg" alt="Image"><br>
+<img src="img/lez9/analisi_eq_diff_non_omogenea_2.jpg" alt="Image"></p>
+<p>Vediamo quindi che nel caso sottosmorzato la corrente oscilla attorno al valore di corrente in ingresso, facendo rimbalzare energia tra induttore e condensatore, seguendo l'andamento di un coseno sfasato di $\theta$, e nel tempo si stabilizza, a causa del dumping dovuto ad $e^{-\alpha t}$.</p>
+<p>Nel caso sovrasmorzato invece, la corrente ha un andamento diverso, infatti la corrente non presenta termini oscillatori, invece si nota una chiara resistenza all'ingresso causata dall'induttore che nel tempo si annulla grazie ai termini $e^{x_{\frac{1}{2}}t}$ ricordandoci che $x_{\frac{1}{2}} &lt; 0$, stabilizzando la corrente attorno al valore della corrente in ingresso.</p>
+<hr>
+<h1 id="fisica-2---lezione-10">Fisica 2 - Lezione 10</h1>
+<h2 id="il-circuito-rlc">Il Circuito RLC:</h2>
+<p>Tornando a parlare di circuiti RLC ricordiamoci la soluzione al caso sovrasmorzato:<br>
+$$I_L(t)=(\frac{1}{x_1-x_2}(x_2e^{x_1t}-x_1e^{x_2t}) + 1)H(t)
+$$<br>
+E la soluzione al caso sottosmorzato:<br>
+$$I_L(t)=(-\frac{\omega_0}{\omega_d}e^{-\alpha t}\cos(\omega_d t-\phi)+1)H(t)$$<br>
+Ed osserviamo il comportamento della corrente descritto da queste due equazioni in maniera grafica:</p>
+<p><img src="img/lez10/eq_rlc_stato_zero.png" alt="Image"></p>
+<p>Proviamo quindi a studiare il comportamento della tensione di lato partendo dalle equazioni della corrente che abbiamo ricavato.</p>
+<p><img src="img/lez10/tensione_di_lato_rlc_stato_zero.png" alt="Image"></p>
+<p>Notare come nel caso sottosmorzato la tensione di lato segue un'andamento sinusoidale, e cioè parte da 0.<br>
+Ciò implica che nell'istante subito successivo all'accensione del generatore, nel resistore non scorrerà corrente, perchè deve seguire l'equazione $V_R = RI_R$, e quindi se $V_R = 0$ allora anche $I_R = 0$. E sicuramente non scorrerà corrente nell'induttore, in quanto si evince dall'equazione per la corrente dell'induttore, che parte anch'essa da 0, nell'istante 0. Quindi tutta la corrente nell'istante $t=0^+$ scorrerà all'interno del condensatore.</p>
+<p>Notiamo inotre che sempre nel caso sottosmorzato, se facciamo il limite per $t \to 0$ dell'equazione della tensione di lato del circuito, troviamo come si comporta la tensione in 0 e come varia la corrente in 0, in quanto vale sempre la relazione $I_C=\frac{d}{dt}V_C(t)$:<br>
+$$\lim_{t\to 0}V(t)=\sqrt{\frac{L}{C}}\omega_{0}t$$<br>
+Per tempi piccoli la tensione è proporzionale al tempo e la corrente ha una variazione direttamente proporzionale al tempo.</p>
+<p>Proviamo quindi a trovare la risposta all'impulso del circuito RLC partendo dalla risposta al gradino, ricordandoci sempre che vale la relazione $h(t) = \frac{d}{dt}g(t)$, per cui:<br>
+$$h(t)=\frac{1}{L}\cdot\sqrt{\frac{L}{C}}\frac{\omega_0}{\omega_d}e^{-\alpha t}\sin(\omega_d t)H(t)=\frac{\omega_0^2}{\omega_d}e^{-\alpha t}\sin(\omega_d t)=I_L^\delta(t)$$<br>
+$$V^\delta(t)=L\frac{dI_L^\delta(t)}{dt}=\sqrt{\frac{L}{C}}\frac{\omega_0^2}{\omega_d}e^{-\alpha t}\cos(\omega_d t + \phi)H(t)$$<br>
+Da ciò scopriamo che la corrente nell'induttore, in risposta ad un impulso, sarà un'oscillazione centrata in $0$ che partità sempre da $0$ e col tempo si annullerà. Mentre la tensione di lato è più interessante, infatti sarà sempre un'oscillazione centrata in $0$ che col tempo viene dissipata ma questa volta non parte da $0$, anzi segue l'andamento del coseno ed inoltre ricompare il termine dello sfasamento di $\phi$ e quindi la tensione di lato iniziale sarà una funzione dei valori di R, L e C.<br>
+Si può infatti ricavare che $cos(\omega_dt+\phi)=0$ quando $t=\frac{\frac{\pi}{2}-\phi}{\omega_d}$.</p>
+<p>Se proviamo a scrivere l'equazione differenziale dell'RLC in serie, notiamo che è molto simile all'equazione differenziale dell'RLC parallelo. Le due equazioni infatti, sono tanto simili da poter trovare un cambio di variabili che ci permetta istantaneamente di trovare le soluzioni del circuito in serie partendo dalla variante parallela.<br>
+Quando ciò accade si dice che i due circuiti sono <strong>duali</strong> ossia conoscendo le soluzioni di un circuito posso trovare direttamente le soluzioni dell'altro valutando la corrispondenza tra le due equazioni.</p>
+<hr>
+<h2 id="le-tensioni-di-nodo">Le Tensioni Di Nodo:</h2>
+<p>Possiamo definire dei nuovi riferimenti chiamati tensioni di nodo, che ci torneranno utili nella vita reale nella progettazione e lo studio di circuiti elettrici.<br>
+Ci basterà sacrificare un nodo che faccia da riferimento, e poi potremo esprimere un valore di tensione ad ogni altro nodo della rete con riferimento a questo nodo.</p>
+<p><img src="img/lez10/tensione_di_nodo.png" alt="Image"></p>
+<hr>
+<h2 id="la-rete-schematizzata">La Rete Schematizzata:</h2>
+<p>Possiamo schematizzare una generica rete con un ingresso ed un'uscita come un blocco 'N', per cui graficamente: $x(t) \to N \to y(t)$.<br>
+Allora sappiamo che varrà la relazione:<br>
+$$\frac{d^ny(t)}{dt^n}+a_1\frac{d^{n-1}y(t)}{dt^{n-1}}+...+a_ny(t)=b_0\frac{d^mx(t)}{dt^m}+b_1\frac{d^{m-1}x(t)}{dt^{m-1}}+...+b_mx(t)$$<br>
+Allora possiamo scrivere la soluzione dell'omogenea come:<br>
+$$s^n+a_1s^{n-1}+...+a_ns=0$$<br>
+E questa avrà soluzioni: $s_1, s_2, ..., s_n$.<br>
+Allora possiamo scrivere che:<br>
+$$y(t) = y^h(t) + y^P(t)$$
+Dove la forma dell'omogenea sarà del tipo:<br>
+$$y^h(t)=\sum_{i=1}^nk_ie^{s_it}$$<br>
+Ove $s_1, s_2, ..., s_n$ distinte.<br>
+Questo vale quindi per circuiti di qualsiasi ordine.</p>
+<hr>
+<h2 id="lintegrale-di-convoluzione">L'Integrale Di Convoluzione:</h2>
+<p>Vogliamo ora capire come possiamo studiare il comportamento di un circuito LTI con un ingresso arbitrario.<br>
+Dove l'ingresso dev'essere una funzione continua a tratti.<br>
+E proviamo a fare ciò con una rete di cui conosciamo solo la risposta all'impulso.</p>
+<p><img src="img/lez10/integrale_di_convoluzione.png" alt="Image"></p>
+<p>Scopriamo quindi che in un circuito LTI, la risposta ad un segnale generico non sarà altro che l'integrale di convoluzione e si può ricavare a partire dalla conoscenza della risposta impulsiva del circuito.<br>
+Quindi preso un circuito sappiamo che se $x(t) \to N \to y(t)$ allora per definizione $\delta(t) \to N \to h(t)$. Ed inoltre, in quanto circuito LTI varrà anche $\delta(t-\tau) \to N \to h(t-\tau)$.<br>
+Possiamo dire che varrà anche:<br>
+$$x(t')\delta(t-t') \to N \to x(t')h(t-t')$$<br>
+Ma allora sappiamo che:<br>
+$$\int_{-\infty}^{+\infty}x(t')\delta(t-t')dt\to N \to\int_{-\infty}^{+\infty}x(t')h(t-t')dt$$<br>
+Ma questo è equivalente a scrivere:<br>
+$$x(t)\to N \to \int_{-\infty}^{+\infty}x(t')h(t-t')dt$$<br>
+Ma allora:<br>
+$$y(t) = \int_{-\infty}^{+\infty}x(t')h(t-t')dt=x(t)*y(t)$$<br>
+Definiamo ora alcune proprietà dell'integrale di convoluzione:</p>
+<ul>
+<li>E' lineare:<br>
+$h(t)*(\alpha x_1(t)+\beta x_2(t))=\alpha h(t)*x_1(t)+\beta h(t)*x_2(t)$</li>
+<li>E' causale:<br>
+Se $x(t)=0\space\forall t&lt;0 \Longrightarrow y(t)$ dipende da $x(t') : 0 \le t' &lt; t$</li>
+<li>E' un'invariante temporale:<br>
+Posto che $y(t)=x(t)*h(t) \Longrightarrow y(t-\tau)=x(t-\tau)*h(t)$</li>
+<li>Ha una forma equivalente:<br>
+$y(t)=\int_{t_0}^tx(t')h(t-t')dt=\int_{0}^{t}x(t-t')h(t')dt'$</li>
+</ul>
+<hr>
+<h1 id="fisica-2---lezione-12">Fisica 2 - Lezione 12</h1>
+<h2 id="la-risposta-sinusoidale">La Risposta Sinusoidale:</h2>
+<p>Vogliamo ora calcolare la risposta sinusoidale di un circuito LTI.</p>
+<p><img src="img/lez12/fasori.PNG" alt="Image"></p>
+<p>Avendo parlato di fasori, definiamo quindi due nuove grandezze, chiamate <strong>impedenza</strong> ed <strong>ammettenza</strong> che saranno valori complessi, derivati dai fasori di tensione e corrente del circuito.</p>
+<p><img src="img/lez12/impedenza_ed_ammettenza.PNG" alt="Image"></p>
+<p><img src="img/lez12/impedenza_ed_ammettenza_parallelo_serie.png" alt="Image"></p>
+<p><img src="img/lez12/rlc_risposta_in_frequenza.PNG" alt="Image"></p>
+<p>Quella che abbiamo chiamato $H(j\omega)$ è la funzione di trasferimento dell'RLC.<br>
+Vediamo quindi come l'RLC, dal grafico della $H(j\omega)$ si comporta da filtro passa-banda centrato in $\omega_0$.</p>
+<p>Ora di solito per esprimere questa relazione non si usa quasi mai la scala lineare bensì si esprime sempre la risposta in guadagno in scala logaritmica, in decibel $[dB] = 20log_{10}(\frac{Osservabile}{Riferimento})$.<br>
+Per cui per esempio:<br>
+$$V[dB]=20log_{10}(\frac{V_{osservabile[V]}}{V_{riferimento[V]}})$$<br>
+Ricordandoci come si comporta la scala logaritmica:<br>
+$$20dB = 20log_{10}(10)$$<br>
+$$0dB = 20log_{10}(1)$$<br>
+$$-20dB = 20log_{10}(0.1)$$<br>
+$$-40dB = 20log_{10}(0.01)$$<br>
+Per cui, definiamo la <strong>frequenza di taglio</strong> del filtro a $-3dB$, il motivo è che:<br>
+$$-3dB = 20log_{10}(|H(j\omega)|)\Longrightarrow |H(j\omega)| = 10^{-3/20}\approx \frac{1}{\sqrt{2}}$$<br>
+Ossia:<br>
+$$|H(j\omega)| = \frac{1}{(1+Q^2(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega})^2)^{0.5}}=\frac{1}{\sqrt{2}}$$<br>
+Implica che:<br>
+$$1=Q^2(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega})^2\Longrightarrow Q(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega})=\pm1$$<br>
+Caso 1)<br>
+$$Q(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega})=1\Longrightarrow Q\omega_{3dB}^2-Q\omega_0^2=\omega_0\omega_{3dB}$$<br>
+Caso 2)<br>
+$$Q(\frac{\omega}{\omega_0}-\frac{\omega_0}{\omega})=-1\Longrightarrow Q\omega_{3dB}^2-Q\omega_0^2=-\omega_0\omega_{3dB}$$<br>
+Troviamo le radici del primo caso:<br>
+$$\omega_{3dB}=\frac{\frac{\omega_0}{Q}+\sqrt{\frac{\omega_0^2}{Q^2}+4\omega_0^2}}{2}$$<br>
+Accettiamo solo la soluzione positiva in quanto l'altra soluzione sarebbe negativa, non accettabile.<br>
+Troviamo le radici del secondo caso:<br>
+$$\omega_{3dB}=\frac{-\frac{\omega_0}{Q}+\sqrt{\frac{\omega_0^2}{Q^2}+4\omega_0^2}}{2}$$</p>
+<p>Per cui le soluzioni sono:<br>
+$$\omega_{3dB}=\sqrt{\frac{\omega_0^2}{Q^2}+4\omega_0^2}\mp\frac{\omega_0}{Q}$$<br>
+Queste saranno le frequenze di taglio del nostro filtro passa banda.</p>
+<hr>
+<h1 id="fisica-2---lezione-13">Fisica 2 - Lezione 13</h1>
+<p>Riprendendo dalle frequenze di taglio del passabanda trovate nell'ultima lezione:<br>
+$$\omega_{3dB}=\sqrt{\frac{\omega_0^2}{Q^2}+4\omega_0^2}\mp\frac{\omega_0}{Q}$$<br>
+Possiamo quindi definire anche la <strong>larghezza di banda</strong> come:<br>
+$$\Delta\omega_{3dB}=\omega_{3dB,2}-\omega_{3dB,1}=\frac{\omega_0}{Q}$$<br>
+Ricordiamo che:<br>
+$$P(t)=I(t)\cdot V(t)$$<br>
+Posto che:<br>
+$$I(t)=|\tilde{I}(t)|\cos(\omega t+\phi_{I})$$<br>
+$$V(t)=|\tilde{V}(t)|\cos(\omega t+\phi_{V})$$<br>
+Allora:<br>
+$$P(t)=|\tilde{I}(t)|\cos(\omega t+\phi_{I})\cdot|\tilde{V}(t)|\cos(\omega t+\phi_{V})$$<br>
+$$P(t)=\frac{|\tilde{I}||\tilde{V}|}{2}(\cos(\omega t + \phi_I-\omega t -\phi_V)+cos(2\omega t + \phi_I + \phi_V))$$<br>
+$$P(t)=\frac{|\tilde{I}||\tilde{V}|}{2}\cos(\phi_I-\phi_V)+\frac{|\tilde{I}||\tilde{V}|}{2}\cos(2\omega t)$$<br>
+Se volessi trovare ora la potenza media su un periodo, mi accorgo che la componente $\cos(2\omega t)$ si annulla completamente, in quanto l'integrale su due periodi di un coseno, o in generale su n-periodi, è pari a zero.<br>
+Quindi la potenza media dipende interamente da quello sfasamento tra corrente e tensione.<br>
+Per cui:<br>
+$$\tilde{P}\substack{media}=\frac{|\tilde{I}||\tilde{V}|}{2}=\frac{1}{2}|\tilde{V}||\tilde{I}|e^{i(\phi_V-\phi_I)}$$<br>
+Definiamo quindi il <strong>valore quadratico medio</strong> come:<br>
+$$x_{rms}=\sqrt{\frac{1}{T}\int_{0}^Tx^2(t)dt}\in\mathbb{R}$$<br>
+Nel caso di una sinusoide, basta applicare la formula e ricordandoci che $\cos^2(x)=\frac{\cos(2x)+1}{2}$ riusciamo a trovare facilmente la primitiva all'interno dell'integrale, da cui si scopre che la potenza rms di una sinuoside vale $x_{rms}=\frac{|\tilde{X}|}{\sqrt{2}}$.</p>
+<hr>
+<h2 id="la-serie-di-fourier">La Serie Di Fourier:</h2>
+<p>Se $f(x)$ è periodica di periodo $T=2\pi$ allora:<br>
+$$f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty}a_n\cos(nx)+\sum_{n=1}^{\infty}b_n\sin(nx)$$<br>
+Da cui:<br>
+$$a_n=\frac{1}{\pi}\int_{0}^{2\pi}f(x)cos(nx)dx,\space n=0,1,...,\infty$$<br>
+$$b_n=\frac{1}{\pi}\int_{0}^{2\pi}f(x)sin(nx)dx,\space n=1,...,\infty$$<br>
+Queste formule sono leggermente flessibili in quanto non è importante integrare in $[0, 2\pi]$ ma bensì l'importante è lo star integrando su un periodo, se per esempio la funzione fosse periodica di $3\pi$ potrei integrare sia su $[-1.5\pi,1.5\pi]$ che su $[-3\pi, 0]$ o anche su $[0, 3\pi]$.<br>
+Poi il moltiplicatore $\frac{1}{\pi}$ vale solo sul seno di periodicità $2\pi$ infatti si tratterebbe di $\frac{2}{T}$.<br>
+E l'argomento delle funzioni seno e coseno è in generale $n\omega x$.<br>
+In generale si può riscrivere l'equazione come:<br>
+$$f(x)=\frac{a_0}{2}+\sum_{n=0}^{\infty}a_n\frac{e^{in\omega_0x}+e^{-in\omega_0x}}{2}+\sum_{n=1}^{\infty}b_n\frac{e^{i\omega_0nx}-e^{-i\omega_0nx}}{2i}$$<br>
+Da cui:<br>
+$$f(x)=\frac{a_0}{2}+\sum_{n=0}^{\infty}a_n\frac{e^{in\omega_0x}+e^{-in\omega_0x}}{2}-i\sum_{n=1}^{\infty}b_n\frac{e^{i\omega_0nx}-e^{-i\omega_0nx}}{2}$$<br>
+$$f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}e^{i\omega_0nx}(\frac{a_n-ib_n}{2})+e^{-i\omega_0nx}(\frac{a_n+ib_n}{2})$$<br>
+Che si può riscrivere come:<br>
+$$f(x)=C_0+\sum_{n=1}^{\infty}C_ne^{i\omega_0nx}+C_{-n}e^{-i\omega_0nx},\space C_n\in\mathbb{C}$$<br>
+Dove $C_{\pm n}=\frac{a_n\mp ib_n}{2}$ e $C_0=\frac{a_0}{2}$.<br>
+Quindi possiamo ricavare $C_n$ come:<br>
+$$C_n=\frac{1}{2}\int_{-L}^{L}f(x)e^{-i\omega_0nx}dx, \space T=2L$$<br>
+Applicando queste equazioni è immediato dimostrare che un'onda quadra che oscilla in $[0, l]$ con periodo $T=2\pi$ si può scrivere come:<br>
+$$f(x)=\frac{l}{2}+\frac{2l}{\pi}\sum_{k=1}^{\infty}\frac{\sin((2k-1)x)}{2k-1}$$</p>
+<hr>
+<h2 id="la-trasformata-di-fourier">La Trasformata Di Fourier:</h2>
+<p>Definiamo la <strong>Trasformata Integrale</strong> come:<br>
+$$g(\alpha)=\int_{a}^{b}
+f(x)k(\alpha, x)dx$$<br>
+Ove $k(\alpha, x)=e^{i\alpha x}$<br>
+Riscriviamo il coefficiente $C_n$ come:<br>
+$$\tilde{C_n}=\sqrt{2L}C_n$$<br>
+Da cui:<br>
+$$\tilde{C_n}=\frac{1}{\sqrt{2L}}\int_{-L}^{L}f(x)e^{-i\omega_0nx}dx, \space T=2L$$<br>
+E se $L\gg \pi$ allora $\omega_0=\frac{2\pi}{2L}$ e quindi $\frac{\pi}{L}\ll 1$.<br>
+Poniamo $\omega_n=n\omega_0$ per cui:<br>
+$$\tilde{C_n}\sqrt{\frac{L}{\pi}}=\frac{1}{\sqrt{2\pi}}\int_{-L}^{L}f(x)e^{-i\omega_n x}dx=F(\omega_n)$$<br>
+$$f(t)=\frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty}\tilde{C_n}\sqrt{\frac{L}{\pi}}e^{i\omega_n x}=\frac{1}{\sqrt{2\pi}}\sum_{n=-\infty}^{\infty}F(\omega_n)e^{i\omega_n x}$$<br>
+Definiamo allora la <strong>Trasformata Inversa Di Fourier</strong> come:<br>
+$$f(x)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}F(\omega_n)e^{i\omega_n x}dx$$<br>
+E Definiamo come <strong>Trasformata Di Fourier</strong> l'equazione:<br>
+$$F(\omega)=\frac{1}{\sqrt{2\pi}}\int_{-L}^{L}f(t)e^{-i\omega t}dt$$<br>
+Importante proprietà della trasformata di fourier è che:<br>
+$$\mathbb{F}[f'(t)](\omega)=(i\omega)\mathbb{F}[f(t)](\omega)$$<br>
+Quindi la trasformata della derivata di una funzione, non è altro che la trasformata della funzione moltiplicata per un fattore $i\omega$.</p>
+<hr>
+<h1 id="fisica-2---lezione-14">Fisica 2 - Lezione 14</h1>
+<p>Nell'ultima lezione abbiamo ricavato le equazioni della trasformata e dell'antitrasformata di fourier:<br>
+$$F(\omega)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}f(t)\cdot e^{-i\omega t}dt$$<br>
+$$f(t)=\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}F(\omega)\cdot e^{i\omega t}d\omega$$<br>
+E ora sappiamo anche una delle più importanti proprietù della trasformata di fourier, ossia che:<br>
+$$z(t)=x(t)*y(t)\Longrightarrow Z(\omega)=X(\omega)\cdot Y(\omega)$$<br>
+E si può dimostrare che per un generico circuito LTI vale la relazione:<br>
+$$y(t)=h(t)*x(t)$$<br>
+Ove $h(t)$ è la risposta all'impulso del circuito.</p>
+<hr>
+<h2 id="la-risposta-del-circuito-rc">La Risposta Del Circuito RC:</h2>
+<p>Proviamo quindi ad applicare queste nuove conoscenze al circuito RC:</p>
+<p><img src="img/lez14/circuito_rc_fourier.PNG" alt="Image"></p>
+<p>Quindi abbiamo ricavato la risposta all'impulso del circuito RC senza risolvere alcuna equazione differenziale.</p>
+<hr>
+<h2 id="la-trasformata-di-laplace">La Trasformata Di Laplace:</h2>
+<p>Sappiamo che la trasformata di fourier è una mappa con kenel:<br>
+$$k(\alpha, \beta) = e^{i\alpha\beta},\space\alpha,\beta\in\mathbb{R}$$<br>
+Allora vogliamo creare una nuova trasformata più potente, che ci permette di generalizzare ulteriormente la trasformata di fourier.<br>
+Definiamo quindi la <strong>Trasformata Di Laplace</strong> come quella trasformata il cui kernel è:<br>
+$$k(\gamma, \beta) = e^{-\gamma\beta},\space\beta\in\mathbb{R},\gamma\in\mathbb{C}$$<br>
+E quindi la trasformata sarà:<br>
+$$F(s)=\int_{0}^{\infty}f(t)e^{-(a+i\omega)t}dt$$<br>
+Ove $s=a+i\omega$.<br>
+La Trasformata Di Laplace è rappresentato dall'integrazione in $[0, +\infty]$ e quindi funziona solo con funzioni causali, stiamo restringendo il nostro campo d'azione nel mondo causale, anche per questo la trasformata di laplace è più vicina al mondo fisico della trasformata di fourier che invece è più uno strumento matematico.</p>
+<p>Proprietà della trasformata di laplace:</p>
+<ul>
+<li>Traslazione Temporale:<br>
+$\mathbb{L}[f(t-c)u(t-c)](s)=e^{-cs}\mathbb{L}[f(t)](s)$<br>
+Ossia la trasformata di una funzione traslata è uguale alla trasformata della funzione per un coefficiente $e^{-cs}$.</li>
+<li>Derivazione:<br>
+$\mathbb{L}[f'(t)](s)=s\cdot\mathbb{L}[f(t)](s)-f(0)$<br>
+Ossia la trasformata della derivata di una funzione è la trasformata della funzione moltiplicata per $s$ a cui sottraiamo le condizioni di contorno $f(0)$.<br>
+Fisicamente parlando è importantissima questa cosa, la trasformata di laplace tiene conto delle condizioni di contorno!<br>
+Ciò si può estendere alla derivata n-esima:<br>
+$\mathbb{L}[f^{(n)}(t)](s)=s^n\cdot\mathbb{L}[f(t)](s)-\sum_{i=1}^n s^{n-i}f^{(i-1)}(0)$</li>
+<li>Integrazione:<br>
+$\mathbb{L}[\int_0^tf(\tau)d\tau](s)=\frac{1}{s}\mathbb{L}[f(t)](s)$<br>
+Ossia la trasformata dell'integrale di una funzione è la trasformata della funzione moltiplicata per $1/s$.</li>
+<li>Convoluzione:<br>
+$\mathbb{L}[(f*g)(t)](s)=\mathbb{L}[f(t)](s)\cdot\mathbb{L}[g(t)](s)$<br>
+Ossia nel dominio di laplace, la convoluzione diventa un prodotto.</li>
+</ul>
+<p>La Trasformata Di Laplace di un generico segnale sarà sempre della forma:<br>
+$$F(s)=\frac{b_0s^m+b_1s^{m-1}+...+b_{m-1}s+b_m}{a_0s^n+a_1s^{n-1}+...+a_{n-1}s+a_n}=\frac{P(s)}{Q(s)}$$<br>
+Che si può sempre scrivere come:<br>
+$$F(s)=k\frac{\Pi_{i=1}^{m}(s-z_i)}{\Pi_{i=1}^n(s-p_i)}$$<br>
+Ossia come la divisione delle produttorie delle radici dei polinomi del numeratore e del denominatore.<br>
+I $z_i$ sono gli zeri di $P(s)$ detti <strong>zeri di F(s)</strong>.<br>
+I $p_i$ sono gli zeri di $Q(s)$ detti <strong>poli di F(s)</strong>.<br>
+Dovremo quindi solo eseguire l'espansione in frazioni parziali per riuscire poi a calcolare l'antitrasformata.</p>
+<hr>
+<h1 id="fisica-2---lezione-15">Fisica 2 - Lezione 15</h1>
+<p>Nella lezione precedente abbiamo definito la trasformata di laplace come:<br>
+$$F(s)=\int_0^\infty f(t)e^{-st}dt, \space s\in\mathbb{C}$$<br>
+E ci siamo lasciati dicendo che in laplace le nostre equazioni, che sono come abbiamo visto tutte equazioni differenziali o integrodifferenziali diventeranno dei polinomi.</p>
+<p>Studiamo ora i passaggi per risolvere queste equazioni:</p>
+<ul>
+<li>Riportare in <strong>Forma Propria</strong>:<br>
+$F(s)=\hat{P}(s)+\frac{R(s)}{Q(s)}$<br>
+Ove il grado di $R(s)$ è minore del grado di $Q(s)$.<br>
+Ossia per prima cosa raccogliamo quello che si riesce a raccogliere.</li>
+<li>Esprimere $Q(s)$ come una produttoria, ovvero trovare i poli di $F(s)$.</li>
+<li>Scomporre in frazioni parziali l'equazione:<br>
+$F(s)=\sum_{k}\frac{ki}{s-p_i}$<br>
+Questa equazione vale solo nel caso di <strong>poli semplici</strong>. Capita che ci siano poli doppi, o anche poli complessi.</li>
+</ul>
+<p>Dividiamo quindi lo studio in casistiche:</p>
+<p>Caso A - <strong>Poli Semplici</strong>:</p>
+<p><img src="img/lez15/equazioni_parziali_poli_semplici.PNG" alt="Image"></p>
+<p>Caso B - <strong>Poli Multipli</strong>:</p>
+<p><img src="img/lez15/equazioni_parziali_poli_multipli.PNG" alt="Image"></p>
+<p>Caso C - <strong>Poli Complessi</strong>:</p>
+<p><img src="img/lez15/equazioni_parziali_poli_complessi.PNG" alt="Image"></p>
+<hr>
+<h2 id="il-circuito-rlc">Il Circuito RLC:</h2>
+<p>Proviamo quindi a risolvere un circuito RLC utilizzando la trasformata di laplace:</p>
+<p><img src="img/lez15/circuito_rlc_prima_parte.PNG" alt="Image"></p>
+<p><img src="img/lez15/circuito_rlc_stato_zero.PNG" alt="Image"></p>
+<p><img src="img/lez15/circuito_rlc_ingresso_zero.PNG" alt="Image"></p>
+<hr>
+<h1 id="fisica-2---lezione-16">Fisica 2 - Lezione 16</h1>
+<p>Riprendendo dalla lezione precedente, proviamo a risolvere lo stesso circuito ma questa volta avvalendoci dei fasori.</p>
+<p><img src="img/lez16/rlc_fasori.PNG" alt="Image"></p>
+<p>Notiamo come la $\tilde{H}(\omega)$ è molto simile alla $I(s)$ che avevamo trovato nella lezione precedente. Così simile che se poniamo $s=j\omega$ sono uguali, chiaramente dobbiamo chiederci se è lecito porre $s=j\omega$ e dobbiamo controllare le ROC della trasformazione da $I(t)$ ad $I(s)$, se comprendono l'asse immaginario allora sarà un'operazione lecita.</p>
+<p>Si può dimostrare infatti questa relazione:</p>
+<p><img src="img/lez16/fasori_dimostrazione.PNG" alt="Image"></p>
+<hr>
+<h1 id="fisica-2---lezione-17">Fisica 2 - Lezione 17</h1>
+<h2 id="il-trasformatore">Il Trasformatore:</h2>
+<p>Si tratta di una componente circuitale passiva, a due porte, formata da due induttori.</p>
+<p><img src="img/lez17/trasformatore.PNG" alt="Image"></p>
+<p><img src="img/lez17/trasformatore_resistenza.PNG" alt="Image"></p>
+<hr>
+
+</body>
+</html>
